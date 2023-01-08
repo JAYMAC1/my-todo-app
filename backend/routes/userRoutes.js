@@ -1,14 +1,8 @@
 const express = require('express')
-
 const router = express.Router()
+const { loginUser, registerUser } = require('../controllers/userController')
 
-router.get('/login', (req, res) => {
-  res.status(200)
-  res.json({ msg: 'connected to /api/users/login within userRoutes' })
-})
-router.get('/register', (req, res) => {
-  res.status(200)
-  res.json({ msg: 'connected to /api/users/register within userRoutes' })
-})
+router.get('/login', loginUser)
+router.get('/register', registerUser)
 
 module.exports = router
