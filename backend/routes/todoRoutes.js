@@ -4,7 +4,6 @@ const {
   getTodos,
   getTodo,
   createTodo,
-  getSingleTodo,
   deleteTodo,
   updateTodo,
 } = require('../controllers/todoController')

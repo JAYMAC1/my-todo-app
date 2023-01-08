@@ -31,7 +31,6 @@ module.exports = {
   getTodos,
   getTodo,
   createTodo,
-  getSingleTodo,
   deleteTodo,
   updateTodo,
 }
