@@ -10,7 +10,7 @@ const loginUser = expressAsyncHandler(async (req, res) => {
   // check email and password
   if (!email || !password) {
     res.status(400)
-    res.json({ msg: 'Please ensure all fields are filled' })
+    throw new Error('Please ensure all fields are filled')
   }
   res.status(200)
   res.json({ msg: 'login from userController' })

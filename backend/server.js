@@ -8,6 +8,7 @@ const connectDB = require('./config/db')
 
 // connect to DB
 connectDB()
+
 // middleware section
 app.use((req, res, next) => {
   console.log(req.path, req.method)
