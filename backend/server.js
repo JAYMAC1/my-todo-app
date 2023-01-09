@@ -4,6 +4,7 @@ const PORT = process.env.PORT || 5000 // get 'PORT' variable from .env file
 const userRoutes = require('./routes/userRoutes') // importing 'router' as userRoutes from userRoutes.js
 const todoRoutes = require('./routes/todoRoutes') // importing 'router' as todoRoutes from todoRoutes.js
 const app = express() // initiallise express as 'app'
+const { errorHandler } = require('./middleware/errorMiddleware')
 const connectDB = require('./config/db')
 
 // connect to DB
@@ -26,6 +27,8 @@ app.get('/', (req, res) => {
 // route handlers
 app.use('/api/users', userRoutes)
 app.use('/api/todos', todoRoutes)
+
+app.use(errorHandler)
 
 app.listen(PORT, () => {
   console.log(`Server ruuning on port: ${PORT}`)
